@@ -1,9 +1,14 @@
 package com.zuckonit.bufet.servers
 
-import com.zuckonit.bufet.models.User
-import com.zuckonit.bufet.stores.UserStore
 
-class UserServer extends UserStore {
-  override def getAll(): Array[User] = Array(User(1,"GET ALL"))
-  override def getById(id: Int): User = User(id,"Get by ID")
+
+import java.util.Date
+
+import com.zuckonit.bufet.enums.Role
+import com.zuckonit.bufet.models.{Entity, User, UserEntity}
+import com.zuckonit.bufet.stores.{Store, UserStore}
+
+class UserServer extends UserStore{
+  override def getAll: Array[UserEntity] = Array[UserEntity](User(1,"Alexander","Sergeevich", "Nesterenko","","", Role.Admin,"zuckonit1","zuckonit1",new Date()))
+  override def get(id: Int): UserEntity = User(id,"Alexander","Sergeevich", "Nesterenko","","", Role.Admin,"zuckonit1","zuckonit1",new Date())
 }

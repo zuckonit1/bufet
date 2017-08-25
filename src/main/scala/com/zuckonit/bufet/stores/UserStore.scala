@@ -1,19 +1,13 @@
 package com.zuckonit.bufet.stores
 
+import java.util.Date
 import javax.ws.rs.core.MediaType
 import javax.ws.rs._
 
-import com.zuckonit.bufet.models.User
+import com.zuckonit.bufet.enums.Role
+import com.zuckonit.bufet.models.{User, UserEntity}
 
-@Path("/users")
-trait UserStore extends Store{
-  @GET
-  @Path("all")
-  @Produces(Array(MediaType.APPLICATION_JSON))
-  def getAll() : Array[User]
-  @GET
-  @Path("user")
-  @Produces(Array(MediaType.APPLICATION_JSON))
-  def getById(@QueryParam("id") id : Int) : User
+@Path("/store/users")
+trait UserStore extends Store[UserEntity] {
 
 }

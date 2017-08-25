@@ -6,10 +6,9 @@ import javax.ws.rs.core.Application
 
 import com.zuckonit.bufet.servers.UserServer
 
-@ApplicationPath("/")
-class App extends Application  {
+class App extends Application {
   override def getClasses: util.Set[Class[_]] = {
-    val set = new util.HashSet[Class[_]]()
+    val set = new java.util.HashSet[Class[_]]
     set.add(classOf[UserServer])
     set
   }
