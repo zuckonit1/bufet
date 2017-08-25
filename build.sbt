@@ -32,3 +32,48 @@ webappPostProcess := {
     }
     listFiles(1)(webappDir)
 }
+
+libraryDependencies += "org.postgresql" % "postgresql" % "42.1.4"
+libraryDependencies += "org.postgresql" % "postgresql" % "42.1.4" % "jooq"
+libraryDependencies += "org.flywaydb" % "flyway-core" % "3.2.1"
+
+libraryDependencies ++= {
+  val ver = "3.7.0"
+  Seq(
+    "org.jooq" % "jooq" % ver,
+    "org.jooq" % "jooq-scala" % ver
+  )
+}
+
+val jdbcDriver = "org.postgresql.Driver"
+val jdbcUrl = "jdbc:postgresql://localhost:5432/db"
+val jdbcUser = "postgres"
+val jdbcPassword = "12345"
+val jdbcSchema = "public"
+
+Seq(flywaySettings: _*)
+
+flywayOptions := Map(
+  "driver" -> jdbcDriver,
+  "url" -> jdbcUrl,
+  "user" -> jdbcUser,
+  "password" -> jdbcPassword,
+  "schemas" -> Seq(jdbcSchema))
+
+
+Seq(jooqSettings: _*)
+
+jooqVersion := "3.7.0"
+
+jooqOptions := Seq(
+  "jdbc.driver" -> jdbcDriver,
+  "jdbc.url" -> jdbcUrl,
+  "jdbc.user" -> jdbcUser,
+  "jdbc.password" -> jdbcPassword,
+  "generator.database.name" -> "org.jooq.util.postgres.PostgresDatabase",
+  "generator.database.inputSchema" -> jdbcSchema,
+  "generator.target.packageName" -> "com.zuckonit.bufet.db")
+
+jooqOutputDirectory <<= (sourceManaged in Compile)(_ / "jooq")
+// for java naming conversion's
+managedSourceDirectories in Compile <+= jooqOutputDirectory

@@ -10,6 +10,4 @@ case class Client(
   override def name: String = s"${user.firstName} ${user.secondName} ${user.lastName}"
 }
 
-trait ClientsStore extends NamedStore[Client] {
-  def load( id : Int ): Client = load(id)
-}
+trait ClientsStore extends NamedStore[Client]

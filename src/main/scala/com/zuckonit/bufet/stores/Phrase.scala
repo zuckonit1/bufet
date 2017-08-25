@@ -6,9 +6,7 @@ case class Phrase(
                   author: String,
                   orders : Option[Array[Order]] = None
                 ) extends Named {
-  override def name: String = s"${author}"
+  override def name: String = author
 }
 
-trait PhrasesStore extends NamedStore[Phrase] {
-  def load( id : Int ): Phrase = load(id)
-}
+trait PhrasesStore extends NamedStore[Phrase]

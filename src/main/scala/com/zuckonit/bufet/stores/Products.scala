@@ -8,6 +8,4 @@ case class Products(
                ) extends Named {
   override def name: String = title
 }
-trait ProductsStore extends NamedStore[Product] {
-  def load( id : Int ): Product = load(id)
-}
+trait ProductsStore extends NamedStore[Products]

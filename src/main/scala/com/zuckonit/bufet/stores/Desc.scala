@@ -9,6 +9,4 @@ case class Desc(
   override def name: String = s"${bufet.getOrElse("").asInstanceOf[Bufet].title}"
 }
 
-trait DescsStore extends NamedStore[Desc] {
-  def load( id : Int ): Desc = load(id)
-}
+trait DescsStore extends NamedStore[Desc]

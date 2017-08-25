@@ -13,9 +13,7 @@ case class Dish(
                   bufets : Option[Array[Bufet]] = None,
                   products : Option[Array[Products]] = None
                 ) extends Named {
-  override def name: String = s"${title}"
+  override def name: String = title
 }
 
-trait DishesStore extends NamedStore[Dish] {
-  def load( id : Int ): Dish = load(id)
-}
+trait DishesStore extends NamedStore[Dish]

@@ -12,8 +12,4 @@ case class Employee(
   override def name: String = s"${user.firstName} ${user.secondName} ${user.lastName}"
 }
 
-trait EmployeesStore extends NamedStore[Employee] {
-  def load( id : Int ): Employee = load(id)
-}
-
-
+trait EmployeesStore extends NamedStore[Employee]

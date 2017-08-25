@@ -17,11 +17,8 @@ case class User(
                //todo create object with all enviroment variables...
                avatat : String = "/images/avatars/default.jpg"
 ) extends Named {
-  def name = login
+  def name: String = login
 }
 
 
-trait UsersStore extends NamedStore[User] {
-  def load( id : Int ): User = load(id)
-  def list: Array[User] = ???
-}
+trait UsersStore extends NamedStore[User]

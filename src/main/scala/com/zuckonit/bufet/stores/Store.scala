@@ -17,5 +17,4 @@ trait Store {
   def orders: OrdersStore
   def phrases: PhrasesStore
   def products: ProductsStore
-
 }

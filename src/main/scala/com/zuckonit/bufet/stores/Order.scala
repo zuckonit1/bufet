@@ -13,9 +13,7 @@ case class Order(
                   desc : Option[Desc] = None,
                   places : Int = 0
                 ) extends Named {
-  override def name: String = s"${id}"
+  override def name: String = id.toString
 }
 
-trait OrdersStore extends NamedStore[Order] {
-  def load( id : Int ): Order = load(id)
-}
+trait OrdersStore extends NamedStore[Order]
