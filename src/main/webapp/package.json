@@ -1,0 +1,41 @@
+{
+  "name": "bufet",
+  "version": "0.0.1",
+  "description": "bufet application",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zuckonit",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "browserify": "^14.4.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^2.0.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.12.0"
+  },
+  "dependencies": {
+    "babelify": "^7.3.0",
+    "bootstrap": "^4.0.0-beta",
+    "browserify": "^14.4.0",
+    "gulp": "^3.9.1",
+    "react": "^0.14.0-beta3",
+    "react-dom": "^0.14.0-beta3",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuckonit1/bufet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zuckonit1/bufet/issues"
+  },
+  "homepage": "https://github.com/zuckonit1/bufet#readme"
+}

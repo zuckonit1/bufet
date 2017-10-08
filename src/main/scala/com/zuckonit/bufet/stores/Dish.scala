@@ -3,7 +3,7 @@ package com.zuckonit.bufet.stores
 case class Dish(
                   id : Int,
                   title: String,
-                  //todo enviroment variables object
+                  //todo environment variables object
                   logo: String = "default",
                   logoFull: String = "default",
                   price: Double,

@@ -84,7 +84,6 @@ trait NamedStore[T <: Named] {
     * @return copied entity object
     */
   protected def copy(entity: T, name: String): T
-
   protected def nameInd(name: String) = "(.*)\\((\\d+)\\)".r
     .findFirstMatchIn(name).map(r => (r.group(1), Option(r.group(2)).map(_.toInt))).getOrElse(name, None)
 
